@@ -2,13 +2,16 @@ import { useLoaderData, Link, Navigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 const singleCocktailUrl =
-  "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
+  "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i="; // API base url endpoint to fetch cocktail details by ID(need to add id)
 
 const cocktailQuery = (id) => {
+  /*
+   * This function returns a query object that can be used with the useQuery hook from React Query.
+   */
   return {
     queryKey: ["cocktail", id],
     queryFn: async () => {
-      const data = await axios.get(`${singleCocktailUrl}${id}`);
+      const data = await axios.get(`${singleCocktailUrl}${id}`); // API call to fetch cocktail details by ID
       return data.data;
     },
   };
@@ -17,15 +20,20 @@ const cocktailQuery = (id) => {
 export const loader =
   (queryClient) =>
   async ({ params }) => {
-    const { id } = params;
-    await queryClient.ensureQueryData(cocktailQuery(id));
-    return { id };
+    /*
+     * This function is called when the loader hook is used in a route.
+     * it's get the queryClient from react-query and use the cocktailQuery function to fetch cocktail details by ID but this time we're using the queryClient.getQueryData method to cache the result of the API call.
+     * if the data exists in the cache, it will be returned immediately without making a new API call. If not, it will make a new API call and store the result in the cache for future use.This is useful for fetching data that doesn't change frequently.
+     */
+    const { id } = params; // extract the ID from the route parameters
+    await queryClient.ensureQueryData(cocktailQuery(id)); // Ensure the cocktail details are cached or fetched from the API before rendering.
+    return { id }; // Return the ID of the cocktail to be used in the components Cocktail from the useLoaderData.
   };
 
 const Cocktail = () => {
   const { id } = useLoaderData();
   const { data } = useQuery(cocktailQuery(id));
-  if (!data?.drinks) return <Navigate to="/" />;
+  if (!data?.drinks) return <Navigate to="/" />; // if the cocktail details are not available/doesn't exist, redirect to home page.
   const {
     strDrink: name,
     strDrinkThumb: image,
@@ -33,12 +41,12 @@ const Cocktail = () => {
     strAlcoholic: info,
     strCategory: category,
     strInstructions: instruction,
-  } = data.drinks[0];
+  } = data.drinks[0]; // destructure the cocktail details from the API response
   const ingredients = Object.keys(data.drinks[0])
     .filter(
       (key) => key.startsWith("strIngredient") && data.drinks[0][key] !== null
     )
-    .map((key) => data.drinks[0][key]);
+    .map((key) => data.drinks[0][key]); // extract the ingredient names from the cocktail details and map them to an array
 
   return (
     <section className="single-drink-page">

@@ -1,4 +1,7 @@
 const About = () => {
+  /*
+   * This is a simple component that displays some text about the project.
+   */
   return (
     <article>
       <h3>About Us</h3>

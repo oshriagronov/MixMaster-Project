@@ -1,8 +1,7 @@
-import axios from "axios";
 import { Form, useNavigation } from "react-router-dom";
 
 const SearchForm = ({ searchQuery }) => {
-  const { state } = useNavigation();
+  const { state } = useNavigation(); // using the navigation hook to access the current state of the router, if submitted it will be true
 
   const isSearching = state === "submitting";
   return (
@@ -14,7 +13,8 @@ const SearchForm = ({ searchQuery }) => {
         defaultValue={searchQuery}
       />
       <button className="btn" type="submit" disabled={isSearching}>
-        {isSearching ? "Searching" : "Search"}
+        {isSearching ? "Searching" : "Search"}{" "}
+        {/* if the form is being submitted, it will show "Searching" and disable the button, otherwise it will show "Search" */}
       </button>
     </Form>
   );

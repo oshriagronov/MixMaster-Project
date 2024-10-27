@@ -1,16 +1,20 @@
 import { Form, redirect, useNavigation } from "react-router-dom";
-import { toast } from "react-toastify";
+import { toast } from "react-toastify"; // Importing the toast function from react-toastify to display notifications of successfully register to the newsletter.
 
 export const action = async ({ request }) => {
-  const data = await request.formData();
-  console.log(Object.fromEntries(data));
-  toast.success("Data submitted successfully");
-  return redirect("/");
+  /*
+   * The action function is responsible for handling the form submission.It receives the request object as a parameter.
+   * Because normally in html submitting a form will just sent "get" request and vite doesn't know that to do with that, so instead we use post request and handle it through rea-router-dom's with action prop.
+   */
+  const data = await request.formData(); // Extracting the form data from the request object with formData() method. This method returns an instance of FormData which is a collection of key/value pairs representing the form fields
+  console.log(Object.fromEntries(data)); // Converting the FormData object to an object using Object.fromEntries() method, so we have easy access to all the form data.
+  toast.success("Data submitted successfully"); // Displaying a success notification with react-toastify library.
+  return redirect("/"); // Redirecting the user to the home page after successful submission of the form.
 };
 
 const Newsletter = () => {
-  const { state } = useNavigation();
-  const isSubmitting = state === "submitting";
+  const { state } = useNavigation(); // Using the useNavigation hook to get the navigation state which contains information about the current route and its status
+  const isSubmitting = state === "submitting"; // Checking if the form is currently being submitted by comparing the state with "submitting".If it's true, then the form is being submitted.
   return (
     <section className="page">
       <Form className="form newsletter-form" method="post">
@@ -48,7 +52,8 @@ const Newsletter = () => {
           required
         />
         <button type="submit" className="btn btn-block" disabled={isSubmitting}>
-          {isSubmitting ? "Submitted" : "Submit"}
+          {isSubmitting ? "Submitted" : "Submit"}{" "}
+          {/* Displaying the submit button text based on whether the form is being submitted or not. If it's true, then the button text will be "Submitted" and will be disabled, otherwise it will be "Submit". */}
         </button>
       </Form>
     </section>
