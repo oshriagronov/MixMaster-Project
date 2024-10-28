@@ -1,4 +1,4 @@
-# Keep
+# MixMaster
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
@@ -6,7 +6,7 @@
 ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 <br>
-Introducing "MixMaster," the ultimate party sidekick app that fetches cocktails from the hilarious Cocktails DB API. With a flick of your finger, you'll unlock a treasure trove of enchanting drink recipes that'll make your taste buds dance and your friends jump with joy. Get ready to shake up your mixology game, one fantastical mocktail at a time, and let the laughter and giggles flow!
+Introducing "MixMaster," the ultimate party sidekick app that fetches cocktails from the hilarious Cocktails DB API.
 
 ## Table of contents
 
@@ -47,5 +47,4 @@ Finally, the site runs in the development mode, open [http://localhost:5173](htt
 
 I would like to thank John Smilga for creating the great course "Complete React, Next.js & TypeScript Projects Course 2024" and for providing the data through "The Cocktails DB".
 
-> Link to the course [here](https://www.udemy.com/course/react-tutorial-and-projects-course/?couponCode=KEEPLEARNING)
-> Link to the The Cocktail DB [here](https://www.thecocktaildb.com/api.php)
+> Link to the course [here](https://www.udemy.com/course/react-tutorial-and-projects-course/?couponCode=KEEPLEARNING) <br> Link to the The Cocktail DB [here](https://www.thecocktaildb.com/api.php)
