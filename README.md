@@ -1,49 +1,64 @@
-# MixMaster
+<br />
+<div align="center">
+  <a href="https://github.com/oshriagronov/mix-master">
+    <img src="public/logo.png" alt="Logo" width="200" height="200">
+  </a>
+<h3 align="center">MixMaster</h3>
+  <p align="center">
+    The ultimate party sidekick app that fetches cocktails from the hilarious Cocktails DB API
+  </p>
+</div>
 
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
-<br>
-Introducing "MixMaster," the ultimate party sidekick app that fetches cocktails from the hilarious Cocktails DB API.
-
-## Table of contents
-
-- [General info](#general-info)
-- [Technologies](#technologies)
-- [Features](#features)
-- [Setup](#setup)
-- [Acknowledgements](#acknowledgements)
-
-## General info
+## About
 
 The project is a is a site that fetches cocktails from "The Cocktails DB API", The site allows users to search for cocktails by name or category, and then view detailed information about each cocktail, including its ingredients, instructions, and photos
+### Key features
 
-## Technologies
+  - Search for cocktails.
+  - Support cashing.
+  - Detailed page about every cocktail.
 
-- Software language: JavaScript, HTML, CSS.
+
+## Technologies Used
+
+- JavaScript, HTML, CSS.
 - React - React Router, React query, Axios.
 - The Cocktails DB API.
 - Vite
 
-## Features
 
-- Search for cocktails.
-- Support cashing.
-- Detailed page about every cocktail.
+## Getting Started
 
-## Setup
+To get a local copy up and running follow these simple steps.
 
-To run MixMaster you need:
+### Prerequisites
 
-- npm modules i used.
+- Linux, MacOS or Windows
+- npm
+- nodejs
 
-### How to start?
+### Installation
+---
 
-This project was created with VITE, so all you need is to run `npm i`(maybe you will need to use sudo) then run `npm run dev` in the project directory.
-Finally, the site runs in the development mode, open [http://localhost:5173](http://localhost:5173/) to view it in your browser.
+1. **Clone and enter the Magnetron repository:**
+
+   ```bash
+   git clone https://github.com/oshriagronov/mix-master && cd mix-master
+   ```
+
+2. **Install npm moudles**  
+
+   ```bash
+   sudo npm i
+   ```
+
+3. **Run the app**
+    ```bash
+    npm run dev
+    ```
+4. **Go to the site**
+   <br/>_Finally, the site runs in the development mode, open [http://localhost:5173](http://localhost:5173/) to view it in your browser._
+
 
 ## Acknowledgements
 
